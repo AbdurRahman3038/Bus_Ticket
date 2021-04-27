@@ -17,15 +17,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('customer')}}">
-                <span data-feather="shopping-cart"></span>
-                Customers
-              </a>
-            </li>
+                <a class="nav-link" href={{route('display.user')}}>
+                  <span data-feather="layers"></span>
+                  Users
+                </a>
+              </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{route('route')}}">
+              <a class="nav-link" href="{{route('location')}}">
                 <span data-feather="users"></span>
-                Routes
+                Locations
               </a>
             </li>
             <li class="nav-item">
@@ -34,18 +34,6 @@
                 Buses
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                Seats
-              </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Tickets
-                </a>
-              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{route('trip')}}">
                   <span data-feather="layers"></span>
@@ -55,7 +43,19 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="layers"></span>
-                  Reports
+                  Booking Table
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  Payment
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('customer')}}">
+                  <span data-feather="shopping-cart"></span>
+                  Customer Record
                 </a>
               </li>
 

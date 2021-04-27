@@ -23,8 +23,8 @@
 
             <div class="form-group">
                 <label for="exampleInputDescription">From</label>
-                <select name="route_from_id" id="" type="text" class="form-control">
-                    @foreach ($routes as $item)
+                <select name="location_from_id" id="" type="text" class="form-control">
+                    @foreach ($locations as $item)
 
                     <option value="{{$item->id}}"> {{$item->from}} </option>
 
@@ -35,8 +35,8 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputDescription">To</label>
-                <select name="route_to_id" id="" type="text" class="form-control">
-                    @foreach ($routes as $item)
+                <select name="location_to_id" id="" type="text" class="form-control">
+                    @foreach ($locations as $item)
 
                     <option value="{{$item->id}}"> {{$item->to}} </option>
 
@@ -115,8 +115,8 @@
 
         <tr>
           <th scope="row">{{$key+1}}</th>
-          <td>{{$data->tripFromRoute->from}}</td>
-          <td>{{$data->tripToRoute->to}}</td>
+          <td>{{$data->tripFromLocation->from}}</td>
+          <td>{{$data->tripToLocation->to}}</td>
           <td>{{$data->tripBus->bus_type}}</td>
           <td>{{$data->date}}</td>
           <td>{{$data->user_reporting_time}}</td>
@@ -124,7 +124,6 @@
           <td>{{$data->price}}</td>
 
           <td>
-              {{-- <a class="btn btn-success" href="">View </a> --}}
               <a class="btn btn-warning" href="">Edit </a>
               <a class="btn btn-danger" href="">Delete </a>
           </td>

@@ -16,7 +16,7 @@
 
         </div>
 
-        <form method="post" action={{route('route.create')}}>
+        <form method="post" action={{route('location.create')}}>
 
             @csrf
 
@@ -123,7 +123,7 @@
           </tr>
     </thead>
     <tbody>
-        @foreach ($route as $key=> $data)
+        @foreach ($location as $key=> $data)
 
         <tr>
           <th scope="row">{{$key+1}}</th>
@@ -133,7 +133,7 @@
           <td>{{$data->time_period}}</td>
           <td>{{$data->coach_type}}</td> --}}
           <td>
-              {{-- <a class="btn btn-success" href="">View </a> --}}
+
               <a class="btn btn-warning" href="">Edit </a>
               <a class="btn btn-danger" href="">Delete </a>
           </td>

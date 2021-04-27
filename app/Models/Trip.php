@@ -11,14 +11,14 @@ class Trip extends Model
     protected $guarded=[];
 
 
-    public function tripFromRoute()
+    public function tripFromLocation()
     {
-    return $this -> belongsTo(Route::class,'route_from_id','id');
+    return $this -> belongsTo(Location::class,'location_from_id','id');
     }
 
-    public function tripToRoute()
+    public function tripToLocation()
     {
-    return $this -> belongsTo(Route::class,'route_to_id','id');
+    return $this -> belongsTo(Location::class,'location_to_id','id');
     }
 
     public function tripBus()
