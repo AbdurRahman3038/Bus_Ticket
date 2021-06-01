@@ -16,10 +16,36 @@ class LocationController extends Controller
     public function create(Request $request)
     {
        Location::create([
-            'from'=>$request->from,
-            'to'=>$request->to
+            'location'=>$request->location,
+            'description'=>$request->description
         ]);
 
         return redirect()->back();
     }
+
+
+    public function edit($id)
+    {
+    $location = Location::find($id);
+
+    return view('backend.content.locationEdit',compact('location'));
+    }
+
+
+public function update(Request $request, $id)
+{
+
+    $location = Location::find($id);
+
+
+    $location->update([
+        'location'=>$request->location,
+        'description'=>$request->description
+    ]);
+
+    return redirect()->back();
+}
+
+
+
 }

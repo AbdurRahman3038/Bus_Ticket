@@ -26,7 +26,7 @@
                 <select name="location_from_id" id="" type="text" class="form-control">
                     @foreach ($locations as $item)
 
-                    <option value="{{$item->id}}"> {{$item->from}} </option>
+                    <option value="{{$item->id}}"> {{$item->location}} </option>
 
                     @endforeach
 
@@ -38,7 +38,7 @@
                 <select name="location_to_id" id="" type="text" class="form-control">
                     @foreach ($locations as $item)
 
-                    <option value="{{$item->id}}"> {{$item->to}} </option>
+                    <option value="{{$item->id}}"> {{$item->location}} </option>
 
                     @endforeach
 
@@ -93,7 +93,27 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
 
+
+
+    <div class="col-md-4">
+        <form action="{{route('trip.search')}}" method="post">
+            @csrf
+        <input name="search" type="text" placeholder="Search" class="form-control">
+        <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+</div>
+
+@if(isset($search))
+    <p>
+    <span class="alert alert-success"> you are searching for '{{$search}}' , found ({{count($trip)}})</span>
+    </p>
+@endif
 
 
 <table class="table">
@@ -115,8 +135,8 @@
 
         <tr>
           <th scope="row">{{$key+1}}</th>
-          <td>{{$data->tripFromLocation->from}}</td>
-          <td>{{$data->tripToLocation->to}}</td>
+          <td>{{$data->tripFromLocation->location}}</td>
+          <td>{{$data->tripToLocation->location}}</td>
           <td>{{$data->tripBus->bus_type}}</td>
           <td>{{$data->date}}</td>
           <td>{{$data->user_reporting_time}}</td>

@@ -41,13 +41,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('bookingBackend')}}">
                   <span data-feather="layers"></span>
                   Booking Table
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('paymentBackend')}}">
                   <span data-feather="layers"></span>
                   Payment
                 </a>
@@ -56,6 +56,12 @@
                 <a class="nav-link" href="{{route('customer')}}">
                   <span data-feather="shopping-cart"></span>
                   Customer Record
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('report')}}">
+                  <span data-feather="shopping-cart"></span>
+                  Report
                 </a>
               </li>
 

@@ -14,7 +14,9 @@
 
 
     <!-- Bootstrap core CSS -->
-<link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -26,11 +28,11 @@
 <meta name="theme-color" content="#7952b3">
 
 
-    <!-- Custom styles for this template -->
-    {{-- <link href="https://getbootstrap.com/docs/5.0/examples/cover/cover.css" rel="stylesheet"> --}}
-
     @stack('css')
   </head>
+
+
+
   <body class="d-flex h-100 text-center text-white" style="background-color: #0d7c166b; ">
 
 <div class="cover-container-fluid d-flex w-100 h-100  mx-auto flex-column">
@@ -41,9 +43,13 @@
 
 
 
+
+
   <main class="px-3 text-dark">
 
     @yield('content')
+
+
 
 
     {{-- @include('frontend.content.searchbox') --}}

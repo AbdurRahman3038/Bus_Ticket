@@ -33,4 +33,24 @@ class TripController extends Controller
 
         return redirect()->back();
     }
+
+
+    public function search(Request $request)
+    {
+        $search=$request->search;
+        if($search){
+            $trip=Trip::where('location_from_id','like','%'.$search.'%')
+                            ->orWhere('location_to_id','like','%'.$search.'%')->get();
+        }
+        else
+        {
+            $trip=Trip::all();
+        }
+
+        // where(name=%search%)
+        $title="Search result";
+        $locations=Location::all();
+        $buses=Bus::all();
+        return view('backend.content.trip',compact('title','trip','search','locations','buses'));
+    }
 }

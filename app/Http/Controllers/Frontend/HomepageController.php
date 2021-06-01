@@ -18,4 +18,5 @@ class HomepageController extends Controller
         return view("frontend.content.searchbox",compact('locationFrom','tripInfo','busInfo'));
     }
 
+
 }

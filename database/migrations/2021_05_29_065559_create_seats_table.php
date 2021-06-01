@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBookingdetailsTable extends Migration
+class CreateSeatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateBookingdetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('bookingdetails', function (Blueprint $table) {
+        Schema::create('seats', function (Blueprint $table) {
             $table->id();
-            $table->string('booking_id');
-            $table->string('seat_number');
-            $table->string('trip_id');
-            $table->string('pending');
+            $table->integer('booking_id');
+            $table->integer('trip_id');
+            $table->string('seat_num');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateBookingdetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookingdetails');
+        Schema::dropIfExists('seats');
     }
 }

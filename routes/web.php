@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\CustomerController;
+use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\LocationController;
 use App\Http\Controllers\Backend\TripController;
 use App\Http\Controllers\Backend\BusController;
@@ -14,8 +15,9 @@ use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\TripviewController;
 use App\Http\Controllers\Frontend\SeatController;
 use App\Http\Controllers\Frontend\BookingController;
-
-
+use App\Http\Controllers\Frontend\PaymentController;
+use App\Http\Controllers\Frontend\TicketController;
+use App\Http\Controllers\Frontend\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,13 +50,26 @@ Route::post('/tripview',[TripviewController::class,'tripview'])->name('tripview'
 
 
 
+Route::group(['middleware'=>'user-auth'],function (){
+
 // route for seat
 Route::get('/seat',[SeatController::class,'seat'])->name('seat');
-Route::post('/seat',[SeatController::class,'create'])->name('seat.create');
+Route::post('/seat',[BookingController::class,'create'])->name('seat.create');
 
 // route for booking
-
 Route::get('/booking',[BookingController::class,'bookingTable'])->name('bookingTable');
+
+// route for payment
+Route::get('/payment',[PaymentController::class,'payment'])->name('payment');
+Route::post('/payment/create',[PaymentController::class,'create'])->name('payment.create');
+
+// route for ticket
+Route::get('/ticket',[TicketController::class,'ticket'])->name('ticket');
+Route::get('/ticket/view',[TicketController::class,'ticketView'])->name('ticketView');
+
+});
+
+
 
 
 
@@ -68,10 +83,6 @@ Route::get('/booking',[BookingController::class,'bookingTable'])->name('bookingT
 //admin login route
 Route::get('login',[BackendUserController::class,'loginForm'])->name('admin.login');
 Route::post('do-login',[BackendUserController::class,'doLogin'])->name('admin.dologin');
-
-
-
-
 
 
 
@@ -102,25 +113,41 @@ Route::post('/admin',[AdminController::class,'create'])->name('admin.create');
 Route::get('/customer',[CustomerController::class,'customer'])->name('customer');
 Route::post('/customer',[CustomerController::class,'create'])->name('customer.create');
 
+// route for report
+Route::get('/report',[ReportController::class,'report'])->name('report');
+
+
 
 // route for location
 Route::get('/location',[LocationController::class,'location'])->name('location');
 Route::post('/location',[LocationController::class,'create'])->name('location.create');
+Route::get('/location/edit/{id}', [LocationController::class, 'edit'])->name('location.edit');
+Route::post('/location/update/{id}', [LocationController::class, 'update'])->name('location.update');
 
 
 // route for trip
 Route::get('/trip',[TripController::class,'trip'])->name('trip');
 Route::post('/trip',[TripController::class,'create'])->name('trip.create');
 
+Route::post('/trip/search',[TripController::class,'search'])->name('trip.search');
 
 // route for trip
 Route::get('/bus',[BusController::class,'bus'])->name('bus');
 Route::post('/bus',[BusController::class,'create'])->name('bus.create');
 
+
+
+
+// route for booking and booking details
+Route::get('/bookingBackend',[BookingController::class,'bookingBackend'])->name('bookingBackend');
+
+Route::get('/bookingBackend/bookingDetails',[BookingController::class,'bookingDetails'])->name('bookingDetails');
+
+// route for trip
+Route::get('/paymentBackend',[PaymentController::class,'paymentBackend'])->name('paymentBackend');
+
+
 });
-
-
-
 
 
 

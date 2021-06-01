@@ -25,4 +25,11 @@ class BusController extends Controller
 
         return redirect()->back();
     }
+
+    public function delete($id)
+    {
+        $bus=Bus::find($id);
+        $bus->delete();
+        return redirect()->back()->with('success','Bus deleted successfully.');
+    }
 }

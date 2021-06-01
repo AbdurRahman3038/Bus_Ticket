@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Search Your Trip</h1>
+<h1 class="pt-4">Search Your Trip</h1>
     <p class="lead">
       Please <a class="text-dark" href="{{route('login.registration.form')}}">Login</a>  or <a class="text-dark" href="{{route('login.registration.form')}}">Register</a> First
     </p>
@@ -14,19 +14,19 @@
         <div class="row">
             <div class="col">
                 <label for="" class="mb-2">From</label>
-                <select name="from" class="form-select" aria-label="Default select example">
-                    <option selected>Select A Place</option>
+                <select name="location_from_id" class="form-select" aria-label="Default select example">
+                    <option selected>Select A Location</option>
                     @foreach ($locationFrom as $data)
-                        <option value="{{ $data-> from}}">{{ $data-> from}}</option>
+                        <option value="{{ $data->id}}">{{ $data-> location}}</option>
                     @endforeach
                   </select>
             </div>
             <div class="col">
                 <label for="" class="mb-2">To</label>
-                <select name="to" class="form-select" aria-label="Default select example">
-                    <option selected>Select Your Destination</option>
+                <select name="location_to_id" class="form-select" aria-label="Default select example">
+                    <option selected>Select A Location</option>
                     @foreach ($locationFrom as $data)
-                        <option value="{{ $data-> to}}">{{ $data-> to}}</option>
+                        <option value="{{ $data->id}}">{{ $data-> location}}</option>
                     @endforeach
                   </select>
             </div>
@@ -54,7 +54,6 @@
                   </select>
             </div>
           </div>
-
         <button type="submit" class="btn btn-success m-2">Search</button>
 
 
@@ -65,3 +64,25 @@
 </div>
 
 @endsection
+
+{{-- <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+
+
+
+    <div class="col-md-4">
+        <form action="{{route('trip.search')}}" method="post">
+            @csrf
+        <input name="search" type="text" placeholder="Search" class="form-control">
+        <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+
+</div>
+
+@if(isset($search))
+    <p>
+    <span class="alert alert-success"> you are searching for '{{$search}}' , found ({{count($trip)}})</span>
+    </p>
+@endif --}}
