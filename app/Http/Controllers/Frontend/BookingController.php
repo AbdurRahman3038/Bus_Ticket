@@ -59,7 +59,7 @@ class BookingController extends Controller
             ]);
 
         //send email to user
-        Mail::to(auth()->user()->email)->send(new BookingNotification($booking));
+        // Mail::to(auth()->user()->email)->send(new BookingNotification($booking));
 
         return redirect()->route('payment');
     }

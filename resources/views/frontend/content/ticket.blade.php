@@ -32,8 +32,13 @@
         {{-- <td>{{$data->trip_id}}</td> --}}
         <td class="text-center">
 
+@if($data->status == "Confirm")
+     <a href="{{route('ticketView', $data->id)}}" class="btn btn-success">View Ticket</a>
 
-     <a href="{{route('ticketView')}}" class="btn btn-success">View Ticket</a>
+     @else
+     <a href="{{route('ticketCancel', $data->id)}}" class="btn btn-danger">Cancel Ticket</a>
+
+     @endif
 
 
     </tr>

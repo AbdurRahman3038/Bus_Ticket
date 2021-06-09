@@ -23,6 +23,7 @@ class TripController extends Controller
 
            'location_from_id'=>$request->location_from_id,
             'location_to_id'=>$request->location_to_id,
+            'route_name'=>$request->route_name,
             'bus_id'=>$request->bus_id,
             'date'=>$request->date,
             'user_reporting_time'=>$request->user_reporting_time,

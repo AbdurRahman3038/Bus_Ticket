@@ -46,6 +46,11 @@
 
             </div>
             <div class="form-group">
+                <label for="exampleInputDescription">Route Name</label>
+                <input name="route_name" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Route Name">
+
+            </div>
+            <div class="form-group">
                 <label for="exampleInputDescription">Bus Type</label>
                 <select name="bus_id" id="" type="text" class="form-control">
                     @foreach ($buses as $item)
@@ -122,6 +127,7 @@
             <th scope="col">Serial</th>
             <th scope="col">From</th>
             <th scope="col">To</th>
+            <th scope="col">Route Name</th>
             <th scope="col">Bus Type</th>
             <th scope="col">Journey Date</th>
             <th scope="col">Reporting Time</th>
@@ -137,6 +143,7 @@
           <th scope="row">{{$key+1}}</th>
           <td>{{$data->tripFromLocation->location}}</td>
           <td>{{$data->tripToLocation->location}}</td>
+          <td>{{$data->route_name}}</td>
           <td>{{$data->tripBus->bus_type}}</td>
           <td>{{$data->date}}</td>
           <td>{{$data->user_reporting_time}}</td>

@@ -18,7 +18,9 @@ class TripviewController extends Controller
         $date = $request->input('date');
         // dd($date);
         $time_period = $request->input('time_period');
+        // dd(  $date);
 
+        if(isset( $date)){
         $tripview=Trip::where('location_from_id',$location_from_id)
         ->where('location_to_id','=',$location_to_id)
         ->whereDate('date',$date)
@@ -28,6 +30,10 @@ class TripviewController extends Controller
 
 
         return view('frontend.content.tripview', compact('tripview'));
+    }
+    else{
+    return redirect()->back()->with('message','Please select all options');
+    }
 
     }
 

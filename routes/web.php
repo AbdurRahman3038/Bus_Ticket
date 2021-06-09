@@ -34,6 +34,7 @@ use App\Http\Controllers\Frontend\Mail;
 
 // route for homepage
 Route::get('/homepage',[HomepageController::class,'homepage'])->name('homepage');
+// Route::get('/homepage',[HomepageController::class,'homepageDesign'])->name('homepage');
 
 // route for login-registration
 
@@ -65,7 +66,8 @@ Route::post('/payment/create',[PaymentController::class,'create'])->name('paymen
 
 // route for ticket
 Route::get('/ticket',[TicketController::class,'ticket'])->name('ticket');
-Route::get('/ticket/view',[TicketController::class,'ticketView'])->name('ticketView');
+Route::get('/ticket/view/{id}',[TicketController::class,'ticketView'])->name('ticketView');
+Route::get('/ticket/cancel/{id}',[TicketController::class,'ticketCancel'])->name('ticketCancel');
 
 });
 
@@ -104,9 +106,9 @@ Route::get('/admin/logout',[BackendUserController::class,'logout'])->name('admin
 Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
 
 
-//Route for admin
-Route::get('/admin',[AdminController::class,'admin'])->name('admin');
-Route::post('/admin',[AdminController::class,'create'])->name('admin.create');
+// //Route for admin
+// Route::get('/admin',[AdminController::class,'admin'])->name('admin');
+// Route::post('/admin',[AdminController::class,'create'])->name('admin.create');
 
 
 // route for customer
@@ -145,7 +147,8 @@ Route::get('/bookingBackend/bookingDetails',[BookingController::class,'bookingDe
 
 // route for trip
 Route::get('/paymentBackend',[PaymentController::class,'paymentBackend'])->name('paymentBackend');
-
+Route::get('/paymentBackend/confirm/{id}',[PaymentController::class,'paymentBackendConfirm'])->name('paymentBackendConfirm');
+Route::get('/paymentBackend/cancel/{id}',[PaymentController::class,'paymentBackendCancel'])->name('paymentBackendCancel');
 
 });
 

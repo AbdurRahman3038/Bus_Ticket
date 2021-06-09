@@ -17,6 +17,7 @@ class CreateTripsTable extends Migration
             $table->id();
             $table->string('location_from_id');
             $table->string('location_to_id');
+            $table->string('route_name');
             $table->string('bus_id');
             $table->date('date');
             $table->string('user_reporting_time',200);

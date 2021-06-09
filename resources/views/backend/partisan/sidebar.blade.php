@@ -10,12 +10,7 @@
                 Dashboard <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href={{route('admin')}}>
-                <span data-feather="file"></span>
-                Admin
-              </a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href={{route('display.user')}}>
                   <span data-feather="layers"></span>

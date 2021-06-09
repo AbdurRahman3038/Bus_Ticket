@@ -13,7 +13,7 @@ class SeatController extends Controller
     public function seat(Request $request)
     {
         $trip = Trip::where('id',$request->input('id'))->first();
-        $alreadyBookSeat = Booking::select('seat_number')->where('trip_id',$trip->id)->get()->toArray();
+        $alreadyBookSeat = Booking::select('seat_number')->where('trip_id',$trip->id)->where('status','Confirm')->get()->toArray();
 
         $seatArray = [];
 

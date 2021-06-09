@@ -2,11 +2,12 @@
 
 @section('content')
 
-@dd($payment)
+{{-- @dd($payment->details) --}}
+
 <br>
 <br>
-{{-- <h1>Hi {{$payment->userDetails->name}} , You've booked {{implode(',',$payment->details->seat_number)}} seat</h1> --}}
-<h1>Please pay your total fair BDT // within 5 min otherwise your ticket will be cancelled </h1>
+<h1>Hi {{$payment->userDetails->name}} , You've booked  seat {{implode(',',$payment->seat_number)}}</h1>
+<h1>Please pay your total fair BDT {{ count((array)$payment->seat_number) * $payment->price }} within 5 min otherwise your ticket will be cancelled </h1>
 <p>Bkash Number is 01982635544 </p>
 <p>Rocket Number is 01982635544 </p>
 <p>Nagad Number is 01982635544 </p>
@@ -37,8 +38,8 @@
 
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Enter Amount</label>
-            <input required name="amount" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Amount">
+            <label for="exampleInputEmail1">Amount</label>
+            <input required name="amount" type="text" class="form-control" id="exampleInputEmail1"  value="{{ count((array)$payment->seat_number) * $payment->price }}">
 
         </div>
     </div>

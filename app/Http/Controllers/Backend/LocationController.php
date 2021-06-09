@@ -10,7 +10,7 @@ class LocationController extends Controller
 {
     public function location()
     {
-        $location=Location::all();
+        $location=Location::where('status','Active')->get();
         return view("backend.content.location", compact('location'));
     }
     public function create(Request $request)
@@ -37,10 +37,10 @@ public function update(Request $request, $id)
 
     $location = Location::find($id);
 
-
     $location->update([
         'location'=>$request->location,
-        'description'=>$request->description
+        'description'=>$request->description,
+        'status'=>$request->status,
     ]);
 
     return redirect()->back();

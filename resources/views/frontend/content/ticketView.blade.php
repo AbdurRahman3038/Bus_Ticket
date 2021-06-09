@@ -39,8 +39,8 @@
 
       <div class="row">
         <div class="col">
-          Paid Status: asdfghjk
-        </div>
+            Deparature Time: {{$data->trip->departure_time}}
+           </div>
         <div class="col">
             Paid Amount: {{count($data->seat_number) * $data->price }}
         </div>

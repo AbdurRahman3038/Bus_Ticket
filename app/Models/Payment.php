@@ -15,6 +15,6 @@ class Payment extends Model
     }
     public function details()
     {
-        return $this->hasMany(BookingDetail::class,'booking_id','id');
+        return $this->hasMany(Booking::class,'user_id','user_id');
     }
 }

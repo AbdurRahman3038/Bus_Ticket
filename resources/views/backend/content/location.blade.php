@@ -51,6 +51,7 @@
             <th scope="col">Location ID</th>
             <th scope="col">Location</th>
             <th scope="col">Location Description</th>
+            <th scope="col">Status</th>
             <th scope="col">Action</th>
           </tr>
     </thead>
@@ -61,6 +62,7 @@
           <th scope="row">{{$key+1}}</th>
           <td>{{$data->location}}</td>
           <td>{{$data->description}}</td>
+          <td>{{$data->status}}</td>
           <td>
 
               <a class="btn btn-warning" href="{{route('location.edit',$data->id)}}">Edit </a>

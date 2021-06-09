@@ -21,7 +21,7 @@
             <td>{{$key + 1}}</td>
             <td>{{$data->id}}</td>
             <td>{{$data->trip_id}}</td>
-            <td>{{$data->seat_number}}</td>
+            <td>{{implode(',',$data->seat_number)}}</td>
             <td>{{$data->price}}</td>
 
             <td class="text-center">

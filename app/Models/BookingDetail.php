@@ -9,4 +9,6 @@ class BookingDetail extends Model
 {
     use HasFactory;
     protected $guarded= [];
+    protected $table="bookingdetails";
+
 }

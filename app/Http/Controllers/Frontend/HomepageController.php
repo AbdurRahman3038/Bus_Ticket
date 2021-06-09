@@ -18,5 +18,11 @@ class HomepageController extends Controller
         return view("frontend.content.searchbox",compact('locationFrom','tripInfo','busInfo'));
     }
 
+    // public function homepageDesign()
+    // {
+
+    //     return view("frontend.content.homeDesign");
+    // }
+
 
 }

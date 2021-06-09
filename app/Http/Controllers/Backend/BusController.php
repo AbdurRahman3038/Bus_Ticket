@@ -17,9 +17,12 @@ class BusController extends Controller
     public function create(Request $request)
     {
        Bus::create([
+            'bus_number'=>$request->bus_number,
             'bus_type'=>$request->bus_type,
             'seat_capacity'=>$request->seat_capacity,
-            'route_type'=>$request->route_type
+            'route_type'=>$request->route_type,
+            'driver_name'=>$request->driver_name,
+            'supervisor_name'=>$request->supervisor_name
 
         ]);
 

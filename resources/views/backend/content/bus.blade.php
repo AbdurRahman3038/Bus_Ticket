@@ -24,6 +24,11 @@
             @csrf
         <div class="modal-body">
 
+            <div class="form-group">
+                <label for="exampleInputDescription">Bus Number</label>
+                <input name="bus_number" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Bus Number">
+
+            </div>
             <div class="dropdown">
                 <label for="exampleInputDescription">Bus Type</label>
                 <br>
@@ -53,6 +58,18 @@
                   </select>
               </div>
 
+              <div class="form-group">
+                <label for="exampleInputDescription">Driver Name</label>
+                <input name="driver_name" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Driver Name">
+
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputDescription">Supervisor Name</label>
+                <input name="supervisor_name" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Supervisor Name">
+
+            </div>
+
 
         </div>
 
@@ -74,9 +91,12 @@
     <thead>
         <tr>
             <th scope="col">Serial</th>
+            <th scope="col">Bus Number</th>
             <th scope="col">Bus Type</th>
             <th scope="col">Seat Capacity</th>
             <th scope="col">Route Type</th>
+            <th scope="col">Driver Name</th>
+            <th scope="col">Supervisor Name</th>
             <th scope="col">Action</th>
           </tr>
     </thead>
@@ -85,9 +105,12 @@
 
         <tr>
           <th scope="row">{{$key+1}}</th>
+          <td>{{$data->bus_number}}</td>
           <td>{{$data->bus_type}}</td>
           <td>{{$data->seat_capacity}}</td>
           <td>{{$data->route_type}}</td>
+          <td>{{$data->driver_name}}</td>
+          <td>{{$data->supervisor_name}}</td>
           <td>
               {{-- <a class="btn btn-success" href="">View </a> --}}
               <a class="btn btn-warning" href="">Edit </a>

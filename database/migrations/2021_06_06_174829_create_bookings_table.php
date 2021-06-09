@@ -21,6 +21,8 @@ class CreateBookingsTable extends Migration
             $table->date('date');
             $table->string('trip_id');
             $table->string('bus_type');
+            $table->string('status')->default('Pending');
+
             $table->timestamps();
         });
     }
