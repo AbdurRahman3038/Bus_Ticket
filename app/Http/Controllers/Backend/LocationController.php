@@ -26,26 +26,38 @@ class LocationController extends Controller
 
     public function edit($id)
     {
-    $location = Location::find($id);
+        $location = Location::find($id);
 
-    return view('backend.content.locationEdit',compact('location'));
+        return view('backend.content.locationEdit',compact('location'));
     }
 
 
-public function update(Request $request, $id)
-{
+    public function update(Request $request, $id)
+    {
 
-    $location = Location::find($id);
+        $location = Location::find($id);
 
-    $location->update([
-        'location'=>$request->location,
-        'description'=>$request->description,
-        'status'=>$request->status,
+        $location->update([
+            'location'=>$request->location,
+            'description'=>$request->description,
+            'status'=>$request->status,
     ]);
 
-    return redirect()->back();
-}
+        return redirect()->back();
+    }
 
+    public function delete(Request $request, $id)
+    {
+
+        $location = Location::find($id);
+
+        $location->update([
+            
+            'status'=>'Deactive',
+    ]);
+
+        return redirect()->back();
+    }
 
 
 }

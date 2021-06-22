@@ -65,7 +65,7 @@
 
             <div class="form-group">
                 <label for="exampleInputDescription">Journey Date</label>
-                <input type="date" name="date"  class="form-control" id="exampleInputDescription" placeholder="Select Journey date">
+                <input type="date" name="date" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}"   class="form-control" id="exampleInputDescription" placeholder="Select Journey date">
 
             </div>
             <div class="form-group">

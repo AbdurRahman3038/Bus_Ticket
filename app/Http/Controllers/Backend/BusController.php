@@ -10,7 +10,7 @@ class BusController extends Controller
 {
     public function bus()
     {
-        $bus=Bus::all();
+        $bus=Bus::where('status','Active')->get();
         return view("backend.content.bus",compact('bus'));
     }
 
@@ -28,11 +28,40 @@ class BusController extends Controller
 
         return redirect()->back();
     }
-
-    public function delete($id)
+    public function edit($id)
     {
-        $bus=Bus::find($id);
-        $bus->delete();
-        return redirect()->back()->with('success','Bus deleted successfully.');
+        $bus = bus::find($id);
+
+        return view('backend.content.busEdit',compact('bus'));
+    }
+
+
+    public function update(Request $request, $id)
+    {
+
+        $bus = Bus::find($id);
+
+        $bus->update([
+            'bus_number'=>$request->bus_number,
+            'bus_type'=>$request->bus_type,
+            'seat_capacity'=>$request->seat_capacity,
+            'route_type'=>$request->route_type,
+            'driver_name'=>$request->driver_name,
+            'supervisor_name'=>$request->supervisor_name,
+    ]);
+
+        return redirect()->back();
+    }
+    public function delete(Request $request, $id)
+    {
+
+        $bus = Bus::find($id);
+
+        $bus->update([
+            
+            'status'=>'Deactive',
+    ]);
+
+        return redirect()->back();
     }
 }

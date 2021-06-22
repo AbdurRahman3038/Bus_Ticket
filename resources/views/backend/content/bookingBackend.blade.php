@@ -24,7 +24,7 @@
           <td>{{$data->date}}</td>
           <td>{{$data->trip_id}}</td>
           <td class="text-center">
-          <a href={{route('bookingDetails')}} class="btn btn-success">Deteails</a>
+          <a href={{route('bookingDetails', $data->id)}} class="btn btn-success">Deteails</a>
       </tr>
 
       @endforeach

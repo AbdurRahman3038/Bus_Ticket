@@ -26,13 +26,13 @@
 
             <div class="form-group">
                 <label for="exampleInputDescription">Bus Number</label>
-                <input name="bus_number" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Bus Number">
+                <input required name="bus_number" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Bus Number">
 
             </div>
             <div class="dropdown">
                 <label for="exampleInputDescription">Bus Type</label>
                 <br>
-                <select class="custom-select mr-sm-2" name="bus_type" id="inlineFormCustomSelect">
+                <select required class="custom-select mr-sm-2" name="bus_type" id="inlineFormCustomSelect">
                     <option selected>Choose Bus Type</option>
                     <option value="AC">AC</option>
                     <option value="Non AC">Non AC</option>
@@ -60,13 +60,13 @@
 
               <div class="form-group">
                 <label for="exampleInputDescription">Driver Name</label>
-                <input name="driver_name" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Driver Name">
+                <input required name="driver_name" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Driver Name">
 
             </div>
 
             <div class="form-group">
                 <label for="exampleInputDescription">Supervisor Name</label>
-                <input name="supervisor_name" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Supervisor Name">
+                <input required name="supervisor_name" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Supervisor Name">
 
             </div>
 
@@ -113,7 +113,9 @@
           <td>{{$data->supervisor_name}}</td>
           <td>
               {{-- <a class="btn btn-success" href="">View </a> --}}
-              <a class="btn btn-warning" href="">Edit </a>
+             
+              <a class="btn btn-warning" href="{{route('bus.edit',$data->id)}}">Edit </a>
+              <a class="btn btn-danger" href="{{route('bus.delete',$data->id)}}">Delete </a>
           </td>
         </tr>
         @endforeach

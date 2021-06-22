@@ -130,7 +130,7 @@
             </div>
             <div class="col">
                 <label for="" class="mb-2">Journey Date</label>
-                <input name="date" type="date" class="form-control" placeholder="Last name" aria-label="Last name">
+                <input name="date" type="date" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" class="form-control" placeholder="Last name" aria-label="Last name">
               </div>
 
               {{-- <div class="col">

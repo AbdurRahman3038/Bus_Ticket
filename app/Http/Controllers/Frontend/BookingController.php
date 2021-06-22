@@ -29,9 +29,10 @@ class BookingController extends Controller
 
         return view('backend.content.bookingBackend',compact('booking'));
     }
-    public function bookingDetails()
+    public function bookingDetails($id)
     {
-        $bookingdetails=Booking::all();
+        $bookingdetails=Booking::find($id);
+        // @dd($bookingdetails);
 
         return view('backend.content.bookingDetails',compact('bookingdetails'));
     }

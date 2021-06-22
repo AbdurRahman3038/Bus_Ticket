@@ -15,20 +15,21 @@
       <th>Price</th>
       <th class="text-center">Action</th>
         </tr>
-        @foreach ($bookingdetails as $key=>$data)
+        {{-- @dd($bookingdetails) --}}
+        
 
         <tr>
-            <td>{{$key + 1}}</td>
-            <td>{{$data->id}}</td>
-            <td>{{$data->trip_id}}</td>
-            <td>{{implode(',',$data->seat_number)}}</td>
-            <td>{{$data->price}}</td>
+          
+            <td>{{$bookingdetails->id}}</td>
+            <td>{{$bookingdetails->trip_id}}</td>
+            <td>{{implode(',',$bookingdetails->seat_number)}}</td>
+            <td>{{$bookingdetails->price}}</td>
 
             <td class="text-center">
-            <a href={{route('bookingDetails')}} class="btn btn-danger">Cancel</a>
+            <a href={{route('bookingDetails',$bookingdetails->id)}} class="btn btn-danger">Cancel</a>
         </tr>
 
-        @endforeach
+        
       </thead>
     </table>
   </div>

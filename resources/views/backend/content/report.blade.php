@@ -9,11 +9,11 @@
 
                 <div class="col-md-4">
                     <label for="from_date">From Date</label>
-                    <input type="date" name="from_date" class="form-control" value="{{date('Y-m-d')}}">
+                    <input type="date" value="{{date('Y-m-d')}}" max="{{date('Y-m-d')}}"  name="from_date" class="form-control" value="{{date('Y-m-d')}}">
                 </div>
                 <div class="col-md-4">
                     <label for="from_date ">To Date</label>
-                    <input type="date" name="to_date" class="form-control" value="{{date('Y-m-d')}}">
+                    <input type="date" value="{{date('Y-m-d')}}" max="{{date('Y-m-d')}}"  name="to_date" class="form-control" value="{{date('Y-m-d')}}">
                 </div>
                 <div class="col-md-4">
                     <button type="submit" class="btn btn-primary position-right">Search</button>

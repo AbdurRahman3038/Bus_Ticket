@@ -125,6 +125,7 @@ Route::get('/location',[LocationController::class,'location'])->name('location')
 Route::post('/location',[LocationController::class,'create'])->name('location.create');
 Route::get('/location/edit/{id}', [LocationController::class, 'edit'])->name('location.edit');
 Route::post('/location/update/{id}', [LocationController::class, 'update'])->name('location.update');
+Route::get('/location/delete/{id}', [LocationController::class, 'delete'])->name('location.delete');
 
 
 // route for trip
@@ -136,6 +137,9 @@ Route::post('/trip/search',[TripController::class,'search'])->name('trip.search'
 // route for trip
 Route::get('/bus',[BusController::class,'bus'])->name('bus');
 Route::post('/bus',[BusController::class,'create'])->name('bus.create');
+Route::get('/bus/edit/{id}', [BusController::class, 'edit'])->name('bus.edit');
+Route::post('/bus/update/{id}', [BusController::class, 'update'])->name('bus.update');
+Route::get('/bus/delete/{id}', [BusController::class, 'delete'])->name('bus.delete');
 
 
 
@@ -143,7 +147,7 @@ Route::post('/bus',[BusController::class,'create'])->name('bus.create');
 // route for booking and booking details
 Route::get('/bookingBackend',[BookingController::class,'bookingBackend'])->name('bookingBackend');
 
-Route::get('/bookingBackend/bookingDetails',[BookingController::class,'bookingDetails'])->name('bookingDetails');
+Route::get('/bookingBackend/bookingDetails/{id}',[BookingController::class,'bookingDetails'])->name('bookingDetails');
 
 // route for trip
 Route::get('/paymentBackend',[PaymentController::class,'paymentBackend'])->name('paymentBackend');

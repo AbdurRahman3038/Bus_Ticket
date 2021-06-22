@@ -40,8 +40,8 @@ class TripController extends Controller
     {
         $search=$request->search;
         if($search){
-            $trip=Trip::where('location_from_id','like','%'.$search.'%')
-                            ->orWhere('location_to_id','like','%'.$search.'%')->get();
+            $trip=Trip::where('route_name','like','%'.$search.'%')->get();
+                            
         }
         else
         {

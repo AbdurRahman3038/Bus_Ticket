@@ -23,13 +23,13 @@
 
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">New Location</label>
-                    <input name="location" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter New Location">
+                    <label  for="exampleInputEmail1">New Location</label>
+                    <input required name="location" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter New Location">
 
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputDescription">Location Description</label>
-                    <input name="description" type="text" class="form-control" id="exampleInputDescription" placeholder="Enter Location Description">
+                    <label  for="exampleInputDescription">Location Description</label>
+                    <input required name="description" type="text" class="form-control" id="exampleInputDescription" placeholder="Enter Location Description">
 
                 </div>
 
@@ -66,6 +66,7 @@
           <td>
 
               <a class="btn btn-warning" href="{{route('location.edit',$data->id)}}">Edit </a>
+              <a class="btn btn-danger" href="{{route('location.delete',$data->id)}}">Delete </a>
 
           </td>
         </tr>
