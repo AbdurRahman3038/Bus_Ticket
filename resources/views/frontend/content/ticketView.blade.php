@@ -1,7 +1,7 @@
 @extends('frontend.master')
 
 @section('content')
-<h1>Print your ticket from here!</h1>
+<h3 class="pt-4">Print your ticket from here!</h3>
 
 <div id="printArea">
 <div class="container">
@@ -20,9 +20,9 @@
         <div class="col">
             Customer Name: {{$data->userDetails->name}}
         </div>
-        <div class="col">
+        {{-- <div class="col">
           Customer Phone No:
-        </div>
+        </div> --}}
       </div>
 
       <div class="row">

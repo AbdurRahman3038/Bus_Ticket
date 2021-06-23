@@ -11,9 +11,9 @@ use App\Models\Trip;
 
 class TicketController extends Controller
 {
-    public function ticket()
+    public function ticket($id)
     {
-        $booking=Booking::with(['userDetails'])->where('status','!=','Cancel')->get();
+        $booking=Booking::with(['userDetails'])->where('status','!=','Cancel')->where('user_id',$id)->get();
         // $booking=User::all();
         return view('frontend.content.ticket',compact('booking'));
     }

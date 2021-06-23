@@ -6,9 +6,9 @@
 
 <br>
 <br>
-<h1>Hi {{$payment->userDetails->name}} , You've booked  seat {{implode(',',$payment->seat_number)}}</h1>
-<h1>Please pay your total fair BDT {{ count((array)$payment->seat_number) * $payment->price }} within 5 min otherwise your ticket will be cancelled </h1>
-<p>Bkash Number is 01982635544 </p>
+<h4>Hi {{$payment->userDetails->name}} , You've booked  seat {{implode(',',$payment->seat_number)}}</h4>
+<h4>Please pay your total fair BDT {{ count((array)$payment->seat_number) * $payment->price }} within 5 min, otherwise your ticket will be cancelled! </h4>
+<p class="pt-3">Bkash Number is 01982635544 </p>
 <p>Rocket Number is 01982635544 </p>
 <p>Nagad Number is 01982635544 </p>
 
@@ -46,7 +46,7 @@
 
 <div class="modal-footer">
 
-  <button type="submit" class="btn btn-success">Send</button>
+  <button type="submit" class="btn btn-success mx-auto">Send</button>
 </div>
 </form>
     @endsection

@@ -16,6 +16,7 @@ class PaymentController extends Controller
         // dd( $payment);
         return view('frontend.content.payment',compact('payment'));
     }
+
     public function paymentBackend()
     {
         $payment=Payment::where('status','Pending')->get();
@@ -45,7 +46,7 @@ class PaymentController extends Controller
 
 
 
-        return redirect()->route('ticket');
+        return redirect()->route('ticket',auth()->User()->id);
     }
 
     public function paymentBackendConfirm($id){

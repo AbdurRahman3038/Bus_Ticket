@@ -4,7 +4,7 @@
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Create A New Route
+    Create A New Location
   </button>
 
   <!-- Modal -->

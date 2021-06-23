@@ -23,6 +23,7 @@ class CreateTripsTable extends Migration
             $table->string('user_reporting_time',200);
             $table->string('departure_time',200);
             $table->string('price',150);
+            $table->string('status')->default('Active');
             $table->timestamps();
         });
     }

@@ -5,7 +5,7 @@
 
 
 <div class="container">
-    <h1>Available Trips on this day </h1>
+    <h3 class="pt-5 pb-3">Available Trips on this day </h3>
 
     <table class="table table-dark">
       <thead>

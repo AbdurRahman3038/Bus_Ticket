@@ -3,7 +3,7 @@
 @section('content')
 
 
-<h1>Your available ticket reservation is here!</h1>
+<h3 class="pt-4 pb-2">Your available ticket reservation is here!</h3>
 
 <table class="table">
     <thead>

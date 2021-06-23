@@ -336,7 +336,7 @@
           @if(count($seatArray) != 0 &&   $seatArray[array_search('B4',$seatArray)] == 'B4')
           <li class="seat">
             <input disabled checked type="checkbox" id="B4" value="B4" />
-            <label for="B3">B3</label>
+            <label for="B4">B4</label>
           </li>
           @else
           <li class="seat">
@@ -354,7 +354,7 @@
             @if(count($seatArray) != 0 &&   $seatArray[array_search('C1',$seatArray)] == 'C1')
             <li class="seat">
               <input disabled checked type="checkbox" id="C1" value="C1" />
-              <label for="B3">B3</label>
+              <label for="C1">C1</label>
             </li>
             @else
             <li class="seat">

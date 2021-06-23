@@ -151,8 +151,8 @@
           <td>{{$data->price}}</td>
 
           <td>
-              <a class="btn btn-warning" href="">Edit </a>
-              <a class="btn btn-danger" href="">Delete </a>
+            <a class="btn btn-warning" href="{{route('trip.edit',$data->id)}}">Edit </a>
+            <a class="btn btn-danger" href="{{route('trip.delete',$data->id)}}">Delete </a>
           </td>
         </tr>
         @endforeach

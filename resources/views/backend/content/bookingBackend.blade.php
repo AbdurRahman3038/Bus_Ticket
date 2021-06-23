@@ -9,7 +9,7 @@
         <tr>
       <th>SL</th>
       <th>User ID</th>
-      <th>Price</th>
+      <th>Total Price</th>
       <th>Journey Date</th>
       <th>Trip ID</th>
       <th class="text-center">Action</th>

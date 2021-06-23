@@ -10,7 +10,7 @@
       <th>Email</th>
       {{-- <th>Phone</th> --}}
       <th>Role</th>
-      <th class="text-center">Action</th>
+      {{-- <th class="text-center">Action</th> --}}
     </tr>
 
     @foreach($users as $key=> $data)
@@ -22,7 +22,7 @@
        <td>{{$data->role}}</td>
        <td class="text-center">
 
-       <a class="btn btn-danger" href="">Delete</a>
+       {{-- <a class="btn btn-danger" href="">Delete</a> --}}
 
 
        </td>

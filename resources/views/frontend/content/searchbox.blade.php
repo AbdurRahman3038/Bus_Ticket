@@ -72,6 +72,15 @@
     .scroll-text{
         color: #000;
     }
+    #back{
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(http://1.bp.blogspot.com/-_8e4cqEhQ2s/VKF2oYgn96I/AAAAAAAABFY/nm7VoDN1Jss/s1600/All%2BSetra%2BWallpaper%2BHD.jpg);
+        min-height: 89vh;
+        background-size: cover;
+        overflow: hidden;
+    }
+    .buss{
+        overflow-x: hidden;
+    }
       </style>
       @endpush
 
@@ -79,8 +88,8 @@
 
 @section('content')
 
-
-<div class="onoffswitch3">
+<div id="back">
+<div class="onoffswitch3 mt-0">
     <input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
     <label class="onoffswitch3-label" for="myonoffswitch3">
         <span class="onoffswitch3-inner">
@@ -92,83 +101,83 @@
         </span>
     </label>
 </div>
-<br>
-<br>
 @if(session()->has('message'))
         <div class="alert alert-warning">
             {{ session()->get('message') }}
         </div>
 @endif
 
-<h1 class="pt-4">Search Your Trip</h1>
-    <p class="lead">
-      Please <a class="text-dark" href="{{route('login.registration.form')}}">Login</a>  or <a class="text-dark" href="{{route('login.registration.form')}}">Register</a> First
-    </p>
-<div class="row p-2" style="border: 2px solid rgb(8, 8, 8); width: ; ">
 
-    <form method="post" action="{{route('tripview')}}">
-        @csrf
+<h1 class="pt-5 text-white">Search Your Trip</h1>
+<p class="lead text-white">
+  Please <a class="text-white" href="{{route('login.registration.form')}}">Login</a>  or <a class="text-white" href="{{route('login.registration.form')}}">Register</a> First
+</p>
+<div class="row p-2 buss">
 
-        <div class="row">
-            <div class="col">
-                <label for="" class="mb-2">From</label>
-                <select name="location_from_id" class="form-select" aria-label="Default select example">
-                    <option selected>Select A Location</option>
-                    @foreach ($locationFrom as $data)
-                        <option value="{{ $data->id}}">{{ $data-> location}}</option>
-                    @endforeach
-                  </select>
-            </div>
-            <div class="col">
-                <label for="" class="mb-2">To</label>
-                <select name="location_to_id" class="form-select" aria-label="Default select example">
-                    <option selected>Select A Location</option>
-                    @foreach ($locationFrom as $data)
-                        <option value="{{ $data->id}}">{{ $data-> location}}</option>
-                    @endforeach
-                  </select>
-            </div>
-            <div class="col">
-                <label for="" class="mb-2">Journey Date</label>
-                <input name="date" type="date" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" class="form-control" placeholder="Last name" aria-label="Last name">
-              </div>
+<form method="post" action="{{route('tripview')}}">
+    @csrf
 
-              {{-- <div class="col">
-                <label for="" class="mb-2">Journey Date</label>
-                <input name="date" type="date" class="form-control datepicker" autocomplete="off">
-                <script type="text/javascript">
-                    $ ('.datepicker').datepicker({
-                        startDate:new Date()
-                    });
-                </script>
-              </div> --}}
-
-              <div class="col">
-                <label for="" class="mb-2">Time Period</label>
-                <select name="time_period" class="form-select" aria-label="Default select example">
-                    <option selected>Select A Time Period</option>
-                    @foreach ($tripInfo as $data)
-                        <option value="{{ $data-> user_reporting_time}}">{{ $data-> user_reporting_time}}</option>
-                    @endforeach
-                  </select>
-            </div>
-            <div class="col">
-                <label for="" class="mb-2">Coach Type</label>
-                <select name="bus_type" class="form-select" aria-label="Default select example">
-                    <option selected>Select Bus Type</option>
-                    @foreach ($busInfo as $data)
-                        <option value="{{ $data-> bus_type}}">{{ $data-> bus_type}}</option>
-                    @endforeach
-                  </select>
-            </div>
+    <div class="row">
+        <div class="col">
+            <label for="" class="mb-2 text-white">From</label>
+            <select name="location_from_id" class="form-select" aria-label="Default select example">
+                <option selected>Select A Location</option>
+                @foreach ($locationFrom as $data)
+                    <option value="{{ $data->id}}">{{ $data-> location}}</option>
+                @endforeach
+              </select>
+        </div>
+        <div class="col">
+            <label for="" class="mb-2 text-white">To</label>
+            <select name="location_to_id" class="form-select" aria-label="Default select example">
+                <option selected>Select A Location</option>
+                @foreach ($locationFrom as $data)
+                    <option value="{{ $data->id}}">{{ $data-> location}}</option>
+                @endforeach
+              </select>
+        </div>
+        <div class="col">
+            <label for="" class="mb-2 text-white">Journey Date</label>
+            <input name="date" type="date" value="{{date('Y-m-d')}}" min="{{date('Y-m-d')}}" class="form-control" placeholder="Last name" aria-label="Last name">
           </div>
-        <button type="submit" class="btn btn-success m-2">Search</button>
+
+          {{-- <div class="col">
+            <label for="" class="mb-2">Journey Date</label>
+            <input name="date" type="date" class="form-control datepicker" autocomplete="off">
+            <script type="text/javascript">
+                $ ('.datepicker').datepicker({
+                    startDate:new Date()
+                });
+            </script>
+          </div> --}}
+
+          <div class="col">
+            <label for="" class="mb-2 text-white">Time Period</label>
+            <select name="time_period" class="form-select" aria-label="Default select example">
+                <option selected>Select A Time Period</option>
+                @foreach ($tripInfo as $data)
+                    <option value="{{ $data-> user_reporting_time}}">{{ $data-> user_reporting_time}}</option>
+                @endforeach
+              </select>
+        </div>
+        <div class="col">
+            <label for="" class="mb-2 text-white">Coach Type</label>
+            <select name="bus_type" class="form-select" aria-label="Default select example">
+                <option selected>Select Bus Type</option>
+                @foreach ($busInfo as $data)
+                    <option value="{{ $data-> bus_type}}">{{ $data-> bus_type}}</option>
+                @endforeach
+              </select>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-success m-2">Search</button>
 
 
 
-      </form>
+  </form>
 
 
+</div>
 </div>
 
 @endsection

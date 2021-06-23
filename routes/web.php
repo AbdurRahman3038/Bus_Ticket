@@ -36,8 +36,10 @@ use App\Http\Controllers\Frontend\Mail;
 Route::get('/homepage',[HomepageController::class,'homepage'])->name('homepage');
 // Route::get('/homepage',[HomepageController::class,'homepageDesign'])->name('homepage');
 
-// route for login-registration
+// route for contactUs
+Route::get('/contactUs',[HomepageController::class,'contactUs'])->name('contactUs');
 
+// route for login-registration
 Route::get('/login-registration',[UserController::class,'showLoginRegistration'])->name('login.registration.form');
 Route::post('/registration',[UserController::class,'registration'])->name('registration');
 Route::post('/login',[UserController::class,'login'])->name('login');
@@ -65,7 +67,7 @@ Route::get('/payment',[PaymentController::class,'payment'])->name('payment');
 Route::post('/payment/create',[PaymentController::class,'create'])->name('payment.create');
 
 // route for ticket
-Route::get('/ticket',[TicketController::class,'ticket'])->name('ticket');
+Route::get('/ticket/{id}',[TicketController::class,'ticket'])->name('ticket');
 Route::get('/ticket/view/{id}',[TicketController::class,'ticketView'])->name('ticketView');
 Route::get('/ticket/cancel/{id}',[TicketController::class,'ticketCancel'])->name('ticketCancel');
 
@@ -131,10 +133,14 @@ Route::get('/location/delete/{id}', [LocationController::class, 'delete'])->name
 // route for trip
 Route::get('/trip',[TripController::class,'trip'])->name('trip');
 Route::post('/trip',[TripController::class,'create'])->name('trip.create');
+Route::get('/trip/edit/{id}', [TripController::class, 'edit'])->name('trip.edit');
+Route::post('/trip/update/{id}', [TripController::class, 'update'])->name('trip.update');
+Route::get('/trip/delete/{id}', [TripController::class, 'delete'])->name('trip.delete');
 
 Route::post('/trip/search',[TripController::class,'search'])->name('trip.search');
 
-// route for trip
+
+// route for bus
 Route::get('/bus',[BusController::class,'bus'])->name('bus');
 Route::post('/bus',[BusController::class,'create'])->name('bus.create');
 Route::get('/bus/edit/{id}', [BusController::class, 'edit'])->name('bus.edit');

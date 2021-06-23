@@ -30,7 +30,7 @@ class BusController extends Controller
     }
     public function edit($id)
     {
-        $bus = bus::find($id);
+        $bus = Bus::find($id);
 
         return view('backend.content.busEdit',compact('bus'));
     }
@@ -58,7 +58,7 @@ class BusController extends Controller
         $bus = Bus::find($id);
 
         $bus->update([
-            
+
             'status'=>'Deactive',
     ]);
 

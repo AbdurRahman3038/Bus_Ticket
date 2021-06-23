@@ -34,9 +34,9 @@
 
 
 
-  <body class="d-flex h-100 text-center text-white" style="background-color: #0d7c166b; ">
+  <body class="d-flex h-100 text-center text-white" style="background-color: #5279556b;">
 
-<div class="cover-container-fluid d-flex w-100 h-100  mx-auto flex-column">
+<div style="height: 30px;" class="cover-container-fluid w-100 d-flex mx-auto flex-column">
 
     @include('frontend.partisan.header')
 
@@ -46,7 +46,7 @@
 
 
 
-  <main class="px-3 text-dark">
+  <main class=" text-dark">
 
     @yield('content')
 

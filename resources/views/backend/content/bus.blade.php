@@ -27,8 +27,8 @@
             <div class="form-group">
                 <label for="exampleInputDescription">Bus Number</label>
                 <input required name="bus_number" type="string" class="form-control" id="exampleInputDescription" placeholder="Add Bus Number">
-
             </div>
+
             <div class="dropdown">
                 <label for="exampleInputDescription">Bus Type</label>
                 <br>
@@ -113,7 +113,7 @@
           <td>{{$data->supervisor_name}}</td>
           <td>
               {{-- <a class="btn btn-success" href="">View </a> --}}
-             
+
               <a class="btn btn-warning" href="{{route('bus.edit',$data->id)}}">Edit </a>
               <a class="btn btn-danger" href="{{route('bus.delete',$data->id)}}">Delete </a>
           </td>
